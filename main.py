@@ -27,3 +27,15 @@ def visualize_shape(num_sides):
             t.forward(100)  # Adjust the length as needed
             t.right(angle)
         window.exitonclick()
+
+if __name__ == "__main__":
+    num_sides = int(input("Enter the number of sides: "))
+    
+    # Identify the shape
+    shape = identify_shape(num_sides)
+    print(f"The shape with {num_sides} sides is a {shape}")
+    
+    # Visualize the shape (optional)
+    visualize = input("Visualize the shape? (y/n): ")
+    if visualize.lower() == "y":
+        visualize_shape(num_sides)
