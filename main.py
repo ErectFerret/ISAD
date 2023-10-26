@@ -1,7 +1,7 @@
 import turtle
 
 def identify_shape(num_sides):
-    if num_sides < 3:
+    if num_sides < 3 or num_sides > 7:
         return "Invalid input: Polygon must have at least 3 sides"
     elif num_sides == 3:
         return "Triangle"
