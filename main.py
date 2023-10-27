@@ -28,7 +28,7 @@ def visualize_shape(num_sides):
             t.right(angle)
         window.exitonclick()
 
-if __name__ == "__main__":
+if __name__ == "main":
     num_sides = int(input("Enter the number of sides: "))
     
     # Identify the shape
