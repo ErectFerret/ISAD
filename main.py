@@ -2,7 +2,7 @@ import turtle
 
 def identify_shape(num_sides):
     if num_sides < 3 or num_sides > 7:
-        return "Invalid input: Polygon must have at least 3 sides"
+        raise ValueError("Invalid input: Polygon must have at least 3 sides")
     elif num_sides == 3:
         return "Triangle"
     elif num_sides == 4:
@@ -14,8 +14,8 @@ def identify_shape(num_sides):
     elif num_sides == 7:
         return "Heptagon"
     else:
-        return "Polygon with {} sides".format(num_sides)
-    
+        return f"Polygon with {num_sides} sides"
+
 def visualize_shape(num_sides):
     if num_sides < 3:
         print("Invalid input: Polygon must have at least 3 sides")
@@ -29,13 +29,21 @@ def visualize_shape(num_sides):
         window.exitonclick()
 
 if __name__ == "main":
-    num_sides = int(input("Enter the number of sides: "))
-    
-    # Identify the shape
-    shape = identify_shape(num_sides)
-    print(f"The shape with {num_sides} sides is a {shape}")
-    
-    # Visualize the shape (optional)
-    visualize = input("Visualize the shape? (y/n): ")
-    if visualize.lower() == "y":
-        visualize_shape(num_sides)
+    try:
+        num_sides = int(input("Enter the number of sides: "))
+
+        # Identify the shape
+        shape = identify_shape(num_sides)
+        print(f"The shape with {num_sides} sides is a {shape}")
+
+        # Visualize the shape (optional)
+        visualize = input("Visualize the shape? (y/n): ")
+        if visualize.lower() == "y":
+            visualize_shape(num_sides)
+
+    except ValueError as ve:
+        print(f"Error: {ve}")
+    except KeyboardInterrupt:
+        print("\nUser interrupted the program.")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
