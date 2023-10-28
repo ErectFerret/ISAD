@@ -1,5 +1,6 @@
 import turtle
 from main import identify_shape
+from main import get_user_input
 
 def test_identify_shape():
     # Test valid shapes
@@ -9,4 +10,13 @@ def test_identify_shape():
 
     # Test invalid shapes
     try:
-        identify_shape(4)  # Partition 2: Invalid number of sides (< 3)
+        identify_shape(4)  # Partition 4
+        assert False, "No exception raised for invalid shape"
+    except ValueError:
+        pass  # Expecting a ValueError
+    try:
+        identify_shape(8)  # Partition 5
+        assert False, "No exception raised for invalid shape"
+    except ValueError:
+        pass  # Expecting a ValueError
+
