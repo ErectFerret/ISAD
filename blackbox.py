@@ -18,5 +18,16 @@ def test_identify_shape():
         identify_shape(8)  # Partition 5
         assert False, "No exception raised for invalid shape"
     except ValueError:
-        pass  # Expecting a ValueError
+        pass
 
+def test_get_user_input():
+    assert get_user_input(4, 'y') == (4, 'y')   # Partition 6
+    assert get_user_input(2, 'n') == (2, 'n')   # Partition 7
+    assert get_user_input(6, 'x') == (6, 'x')   # Partition 8
+    assert get_user_input(1, 'z') == (1, 'z')   # Partition 9
+
+def main():
+    test_identify_shape()
+    test_get_user_input()
+    print("All tests passed!")
+main()
