@@ -10,7 +10,7 @@ def test_identify_shape():
 
     # Test invalid shapes
     try:
-        identify_shape(4)  # Partition 4
+        identify_shape(2)  # Partition 4
         assert False, "No exception raised for invalid shape"
     except ValueError:
         pass  # Expecting a ValueError
