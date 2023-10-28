@@ -28,9 +28,16 @@ def visualize_shape(num_sides):
             t.right(angle)
         window.exitonclick()
 
-def main():
+def get_user_input():
     try:
         num_sides = int(input("Enter the number of sides: "))
+        return num_sides
+    except ValueError:
+        raise ValueError("Invalid input: Please enter a valid number")
+
+def main():
+    try:
+        num_sides = get_user_input()
 
         # Identify the shape
         shape = identify_shape(num_sides)
