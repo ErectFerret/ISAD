@@ -16,3 +16,17 @@ def test_identify_shape_invalid_input():
             assert False, f"No exception raised for invalid side: {sides}"
         except ValueError:
             pass  # Expecting a ValueError
+
+def test_visualize_shape_valid():
+    # Test Case 3
+    valid_visualization = [4, 5, 6]
+    for sides in valid_visualization:
+        assert visualize_shape(sides) is None
+
+def test_visualize_shape_invalid():
+    # Test Case 4
+    try:
+        visualize_shape(2)
+        assert False, "No exception raised for invalid visualization"
+    except ValueError:
+        pass  # Expecting a ValueError
