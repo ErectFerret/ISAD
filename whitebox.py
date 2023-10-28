@@ -30,3 +30,13 @@ def test_visualize_shape_invalid():
         assert False, "No exception raised for invalid visualization"
     except ValueError:
         pass  # Expecting a ValueError
+
+
+def main():
+    test_identify_shape_valid_shapes()
+    test_identify_shape_invalid_input()
+    test_visualize_shape_valid()
+    test_visualize_shape_invalid()
+    print("All tests passed!")
+
+main()
