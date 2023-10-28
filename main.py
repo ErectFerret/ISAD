@@ -28,7 +28,7 @@ def visualize_shape(num_sides):
             t.right(angle)
         window.exitonclick()
 
-if __name__ == "main":
+def main():
     try:
         num_sides = int(input("Enter the number of sides: "))
 
@@ -47,3 +47,5 @@ if __name__ == "main":
         print("\nUser interrupted the program.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+
+main()
